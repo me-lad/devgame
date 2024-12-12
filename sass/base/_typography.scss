@@ -1,0 +1,92 @@
+//! Start Base-Title -->
+
+//! Base-Title Text -->
+
+.title-white {
+  color: $color-white;
+  font-size: $title-font;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include responsive(Ph) {
+    font-size: 2.25rem;
+  }
+}
+
+.title-pink {
+  color: $color-tertiary;
+  font-size: $title-font;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include responsive(Ph) {
+    font-size: 2.25rem;
+  }
+}
+
+.text-green {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $color-green;
+}
+
+//! Base-Title List -->
+
+.list-white {
+  font-size: 1.4rem;
+  color: $color-white;
+  padding-top: 0.6rem;
+  @include transition();
+  &:hover {
+    cursor: pointer;
+    color: $color-secondary;
+  }
+}
+
+.list-active {
+  font-size: 1.4rem;
+  color: $color-secondary;
+  border-top: 0.1rem solid $color-secondary;
+  padding-top: 0.5rem;
+  font-weight: bold;
+  @include transition();
+  @include responsive(Ps) {
+    border-top: 0;
+    padding-top: 0.6rem;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+//! Base-Title Button -->
+
+.button-off {
+  width: 4rem;
+  height: 4rem;
+  color: $color-white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  @include displayFlex();
+  @include transition();
+  &:hover {
+    cursor: pointer;
+    background-color: $color-secondary;
+  }
+}
+.button-active {
+  width: 4rem;
+  height: 4rem;
+  background-color: $color-secondary;
+  color: $color-white;
+  font-size: 1.7rem;
+  font-weight: bold;
+  border-radius: 0.8rem;
+  @include displayFlex();
+  @include transition();
+  &:hover {
+    cursor: pointer;
+    background-color: lighten($color-secondary, 10);
+  }
+}
+
+//! End Base-Title -->

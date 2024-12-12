@@ -1,0 +1,25 @@
+//! Base-Title Styles -->
+
+.base-title {
+  width: 100%;
+  @include displayFlex(space-between);
+  @include responsive(Ps) {
+    flex-direction: column;
+    row-gap: 1rem;
+  }
+  &__title {
+    padding-top: 0.6rem;
+  }
+  &__list {
+    display: flex;
+    column-gap: 3rem;
+  }
+  &__button {
+    @include displayFlex();
+    padding-top: 0.6rem;
+    gap: 0.5rem;
+    @include responsive(Ps) {
+      display: none;
+    }
+  }
+}

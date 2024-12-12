@@ -1,0 +1,125 @@
+//! Footer Styles -->
+.footer {
+  width: 100%;
+  background-color: $color-primary;
+  margin-top: 2rem;
+  //! Footer Content Styles -->
+  &__content {
+    width: 70%;
+    margin: 0 auto;
+    padding: 3rem 0;
+    @include displayFlex(space-between);
+    @include responsive(Laptop) {
+      width: 90%;
+      justify-content: space-around;
+    }
+    @include responsive(Th) {
+      justify-content: space-between;
+    }
+    @include responsive(Ps) {
+      justify-content: center;
+      flex-wrap: wrap;
+      column-gap: 4rem;
+      row-gap: 1rem;
+    }
+    @include responsive(P) {
+      width: 100%;
+    }
+    //! Footer Content Logo Styles -->
+    &-logo {
+      @include displayFlex();
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &-image {
+      max-height: 5.75rem;
+      @include responsive(Ps) {
+        max-height: 4.5rem;
+      }
+      @include responsive(P) {
+        max-height: 3.75rem;
+      }
+    }
+    &-title {
+      font-size: 2.2rem;
+      color: $color-white;
+      @include responsive(Ps) {
+        font-size: $text-default-font;
+      }
+      @include responsive(P) {
+        font-size: 1.4rem;
+      }
+    }
+    //! Footer Content Links Styles -->
+    &-links {
+      display: flex;
+      gap: 2rem;
+      font-size: 1.2rem;
+    }
+    &-link {
+      color: $color-silver;
+      @include transition();
+      &:hover {
+        cursor: pointer;
+        color: $color-white;
+      }
+    }
+    //! Footer Content Media Styles -->
+    &-items {
+      display: flex;
+      gap: 1.5rem;
+      @include responsive(P) {
+        display: none;
+      }
+    }
+    &-item {
+      @include displayFlex();
+      width: 3.8rem;
+      height: 3.8rem;
+      background-color: $color-bg;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 1.5rem lighten($color-black, 30);
+      @include transition();
+      &.close {
+        display: none;
+        background: transparent;
+        box-shadow: none;
+        border-radius: 0;
+        & > svg {
+          color: $color-white;
+          font-size: 1.6rem;
+        }
+        &:hover {
+          transform: none;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-0.3rem);
+        & .footer__content-icon {
+          transform: rotatey(360deg);
+          color: $color-secondary;
+          &.youtube {
+            color: $color-red;
+          }
+          &.whatsapp {
+            color: $color-green;
+          }
+        }
+      }
+    }
+    &-icon {
+      color: $color-white;
+      font-size: 1.6rem;
+      @include transition(500ms);
+    }
+    //! Footer Content Copy Styles -->
+    &-copy {
+      color: $color-lightsilver;
+      font-size: $text-sm-font;
+      @include responsive(P) {
+        display: none;
+      }
+    }
+  }
+}

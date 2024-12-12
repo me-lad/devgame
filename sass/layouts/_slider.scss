@@ -1,0 +1,17 @@
+//! Slider Styles -->
+
+.slider {
+  width: 100%;
+  height: 50rem;
+  @include responsive(Ph) {
+    height: 43rem;
+  }
+  @include responsive(Ps) {
+    height: 34.75rem;
+  }
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

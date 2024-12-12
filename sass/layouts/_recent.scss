@@ -1,0 +1,407 @@
+//! Recent Styles -->
+
+.recent {
+  width: 100%;
+  //! Recent Content Styles -->
+  &__content {
+    width: $width-content;
+    margin: 0 auto;
+    position: relative;
+    @include responsive(Th) {
+      width: 97.5% !important;
+    }
+    @include responsive(Ps) {
+      width: 100% !important;
+    }
+    &-body {
+      width: 100%;
+      @include displayFlex(space-between, normal);
+      margin-top: 2.5rem;
+      position: relative;
+      @include responsive(Ts) {
+        justify-content: center;
+      }
+    }
+    &-left {
+      width: 73%;
+      @include responsive(Laptop) {
+        width: 75.5%;
+      }
+      @include responsive(Ts) {
+        width: 95%;
+      }
+      @include responsive(Ps) {
+        width: 100%;
+      }
+    }
+    &-right {
+      width: 25%;
+      padding: 0.5rem !important;
+      justify-content: center !important;
+      @include responsive(Laptop) {
+        width: 22.5%;
+      }
+      @include responsive(Ts) {
+        position: absolute;
+        z-index: 50;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        visibility: hidden;
+        width: 75.5%;
+        padding: 2.5rem !important;
+      }
+      @include responsive(Ps) {
+        width: 100%;
+        border-radius: 0 !important;
+        padding-bottom: 0 !important;
+      }
+    }
+  }
+  //! Recent Battle Styles -->
+  &__battle {
+    @include responsive(Ph) {
+      flex-wrap: wrap;
+      overflow: auto !important;
+      flex-direction: column;
+      max-height: 300px;
+      gap: 5rem;
+    }
+    @include responsive(Ps) {
+      border-radius: 0 !important;
+    }
+    &-description {
+      height: 100%;
+      @include responsive(Ts) {
+        min-width: 30rem;
+      }
+    }
+    &-items {
+      @include displayFlex(flex-start);
+      gap: 3rem;
+      margin-top: 4.5rem;
+    }
+    &-sward {
+      width: 3.5rem;
+      height: 3.5rem;
+      object-fit: cover;
+    }
+    &-progress {
+      margin-top: 3rem;
+    }
+    &-table {
+      width: 35%;
+      height: 100%;
+      @include responsive(Ph) {
+        min-width: 33rem;
+      }
+    }
+    &-group {
+      width: 100%;
+      @include displayFlex();
+      gap: 0.5rem;
+    }
+    &-button {
+      width: 2.6rem;
+      height: 2.6rem;
+      border-radius: 0.3rem;
+      font-size: $text-sm-font;
+      &--size {
+        width: 85%;
+        font-size: 1.25rem;
+        font-weight: normal;
+      }
+    }
+    &-list {
+      @include displayFlex();
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    &-container {
+      width: 100%;
+      padding: 0.7rem 1.5rem;
+      background-color: $color-bg;
+      border-radius: 0.5rem;
+      @include displayFlex(space-between);
+      @include transition();
+      &.active {
+        background-color: darken($color-red, 15);
+        & .recent__battle-number {
+          background-color: darken($color-red, 25);
+        }
+      }
+      &:hover {
+        background-color: darken($color-red, 5);
+        cursor: pointer;
+      }
+    }
+    &-triple {
+      @include displayFlex();
+      gap: 0.75rem;
+    }
+    &-number {
+      @include displayFlex();
+      @include transition();
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $color-primary;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      color: $color-white;
+    }
+    &-pic {
+      width: 1.6rem;
+      object-fit: cover;
+    }
+    &-name {
+      color: $color-white;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &-point {
+      color: $color-white;
+      font-size: $text-sm-font;
+    }
+  }
+  //! Recent Games Styles -->
+  &__game {
+    width: 100%;
+    margin-top: 1.5rem;
+    position: relative;
+    padding: 0.8rem 17.5rem 0.8rem 2.5rem !important;
+    @include responsive(Ph) {
+      padding-right: 12rem !important;
+    }
+    @include responsive(Ps) {
+      padding-right: 10rem !important;
+      border-radius: 0 !important;
+    }
+    &-name {
+      @include displayFlex();
+      gap: 0.8rem;
+    }
+    &-image {
+      width: 6rem;
+      @include responsive(Ph) {
+        width: 4.5rem;
+      }
+      @include responsive(Ps) {
+        width: 4rem;
+      }
+      & > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    &-line {
+      width: 0.1rem;
+      height: 9rem;
+      background-color: darken($color-silver, 10);
+      transform: rotate(25deg);
+      @include responsive(Ph) {
+        height: 7rem;
+      }
+      @include responsive(Ps) {
+        height: 5.5rem;
+      }
+    }
+    &-info {
+      @include displayFlex();
+      flex-direction: column;
+      gap: 0.5rem;
+      &--start {
+        align-items: flex-start;
+      }
+    }
+    &-text {
+      color: $color-white;
+      font-size: 1.5rem;
+      @include responsive(Ps) {
+        font-size: 1.25rem;
+      }
+    }
+    &-subtext {
+      color: $color-silver;
+      font-size: 1rem;
+      @include responsive(Ps) {
+        font-size: 0.8rem;
+      }
+    }
+    &-percentage {
+      width: 15rem;
+      height: 100%;
+      background-color: darken($color-tertiary, 15);
+      clip-path: polygon(31% 0, 100% 0, 100% 100%, 0 100%);
+      position: absolute;
+      right: 0;
+      @include responsive(Ph) {
+        width: 12rem;
+      }
+      @include responsive(Ps) {
+        width: 10rem;
+      }
+      &--blue {
+        background-color: darken($color-secondary, 15);
+        & > div {
+          background-color: darken($color-secondary, 5);
+        }
+      }
+    }
+    &-percent {
+      width: 13.5rem;
+      height: 100%;
+      color: $color-white;
+      font-size: $text-lg-font;
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+      background-color: darken($color-tertiary, 5);
+      clip-path: polygon(34% 0, 100% 0, 100% 100%, 0 100%);
+      @include displayFlex();
+      @include responsive(Ph) {
+        width: 11rem;
+      }
+      @include responsive(Ps) {
+        width: 9.2rem;
+        font-size: 1.5rem;
+      }
+    }
+    & h3:nth-child(1) {
+      @include responsive(P) {
+        font-size: 1.05rem;
+        max-width: 6rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-wrap: nowrap;
+      }
+    }
+  }
+  //! Recent Button Styles -->
+  &__button {
+    width: 100%;
+    margin-top: 1.5rem;
+    &-link {
+      width: 100%;
+      font-weight: normal;
+      border-radius: 0.5rem;
+      @include responsive(Ps) {
+        border-radius: 0 !important;
+      }
+    }
+  }
+  //! Recent Side Styles -->
+  &__side {
+    @include displayFlex(space-between);
+    flex-direction: column;
+    @include responsive(Ts) {
+      width: 100%;
+      height: 100%;
+      justify-content: start;
+      gap: 3.5rem;
+    }
+    @include responsive(Ps) {
+      gap: 2rem;
+    }
+    &-title {
+      font-size: 1.8rem;
+      @include responsive(Ts) {
+        font-size: $title-font;
+      }
+    }
+    &-matches {
+      margin: 4.5rem 0;
+      @include displayFlex(flex-start);
+      flex-direction: column;
+      gap: 5rem;
+      &.resp {
+        display: none;
+        @include responsive(Ts) {
+          display: flex;
+        }
+      }
+      @include responsive(Ts) {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 15rem;
+        margin-top: 2.5rem;
+        margin-bottom: 0;
+      }
+      @include responsive(P) {
+        gap: 8rem;
+      }
+    }
+    &-items {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    &-result {
+      color: $color-white;
+      font-size: 2.25rem;
+      font-weight: bold;
+    }
+    &-progress {
+      margin-top: 2rem;
+    }
+    &-button {
+      width: 100%;
+      @include responsive(Ts) {
+        width: 40%;
+      }
+      @include responsive(Ps) {
+        margin-top: 1rem;
+      }
+    }
+    &-link {
+      width: 100%;
+      height: 5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $color-black;
+      border-radius: 0.5rem;
+      @include displayFlex();
+      @include transition();
+      background: linear-gradient(
+        90deg,
+        $color-gold 0,
+        lighten($color-gold, 25) 10%,
+        $color-gold 50%,
+        lighten($color-gold, 25) 90%,
+        $color-gold 100%
+      );
+      &:hover {
+        background: linear-gradient(90deg, $color-gold 0, $color-gold 100%);
+        letter-spacing: 0.12rem;
+        font-size: 1.6rem;
+      }
+    }
+    &-opener {
+      width: 1.25rem;
+      height: 1.25rem;
+      position: absolute;
+      top: 5.25rem;
+      left: 0;
+      font-size: $text-default-font;
+      color: $color-white;
+      cursor: pointer;
+      border: 0.15rem solid $color-white;
+      border-radius: 50%;
+      background-color: $color-white;
+      display: none;
+      @include responsive(Ts) {
+        display: block;
+      }
+      @include responsive(Ps) {
+        top: 1.5rem;
+        left: 1rem;
+      }
+    }
+  }
+}

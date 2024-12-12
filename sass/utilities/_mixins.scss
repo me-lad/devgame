@@ -1,0 +1,57 @@
+@mixin displayFlex($justify: center, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin transition($duration: 200ms, $type: ease-in, $delay: 15ms) {
+  transition: all $duration $type $delay;
+  -webkit-transition: all $duration $type $delay;
+  -moz-transition: all $duration $type $delay;
+}
+
+@mixin textBreakkit($line: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin responsive($breakPoint) {
+  // Extra Sm BreakPoint 480px
+  @if $breakPoint == P {
+    @media screen and (max-width: 30em) {
+      @content;
+    }
+  }
+  // Sm BreakPoint 640px
+  @if $breakPoint==Ps {
+    @media screen and (max-width: 40em) {
+      @content;
+    }
+  }
+  // Md BreakPoint 864px
+  @if $breakPoint==Ph {
+    @media screen and (max-width: 54em) {
+      @content;
+    }
+  }
+  // Lg BreakPoint 1040px
+  @if $breakPoint==Ts {
+    @media screen and (max-width: 65em) {
+      @content;
+    }
+  }
+  // xLg BreakPoint 1280px
+  @if $breakPoint==Th {
+    @media screen and (max-width: 80em) {
+      @content;
+    }
+  }
+  // xxLg BreakPoint 1440px
+  @if $breakPoint==Laptop {
+    @media screen and (max-width: 90em) {
+      @content;
+    }
+  }
+}

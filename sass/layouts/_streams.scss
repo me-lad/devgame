@@ -1,0 +1,118 @@
+//! Streams Styles -->
+
+.streams {
+  width: 100%;
+  margin: 2.5rem 0;
+  //! Streams Content Styles -->
+  &__content {
+    width: $width-content;
+    height: 100%;
+    margin: 0 auto;
+    @include responsive(Th) {
+      width: 97.5% !important;
+    }
+    @include responsive(Ps) {
+      width: 100% !important;
+    }
+    &-items {
+      width: 100%;
+      @include displayFlex(space-around);
+      padding-top: 6rem;
+      flex-wrap: wrap;
+      row-gap: 7.5rem;
+      @include responsive(Laptop) {
+        justify-content: space-between;
+      }
+      @include responsive(Th) {
+        overflow: auto;
+        flex-direction: column;
+        height: 35rem;
+      }
+      @include responsive(Ts) {
+        max-height: 33rem;
+      }
+      @include responsive(Ph) {
+        max-height: 30.75rem;
+      }
+      @include responsive(P) {
+        max-height: 32.5rem;
+      }
+    }
+    &-item {
+      width: 20%;
+      min-width: 192.5px;
+      position: relative;
+      z-index: 2;
+      @include displayFlex();
+      flex-direction: column;
+      @include responsive(Laptop) {
+        width: 17.5%;
+      }
+      @include responsive(Ph) {
+        min-width: 160px;
+      }
+      @include responsive(Ph) {
+        min-width: 135px;
+      }
+    }
+    &-image {
+      width: 85%;
+      border: 0.2rem solid $color-white;
+      max-height: 19rem;
+      overflow: hidden;
+      border-radius: 3.5rem;
+      & > img {
+        width: 100%;
+        scale: 1.02;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+        @include transition();
+        &:hover {
+          cursor: pointer;
+          scale: 1.15;
+        }
+      }
+    }
+    &-info {
+      width: 85%;
+      @include displayFlex();
+      flex-direction: column;
+      row-gap: 0.65rem;
+      margin-top: 1.35rem;
+    }
+    &-name {
+      color: $color-white;
+      font-size: 1.35rem;
+    }
+    &-position {
+      color: $color-silver;
+      font-size: 1.3rem;
+    }
+    &-value {
+      color: $color-white;
+      font-size: 1.25rem;
+    }
+    &-number {
+      width: 6rem;
+      height: 7rem;
+      background: url(/public/images/number.png) no-repeat;
+      background-size: 34rem;
+      position: absolute;
+      top: -4.75rem;
+      left: 1.25rem;
+      z-index: -1;
+      &.two {
+        background-position: -6rem 0;
+      }
+      &.three {
+        background-position: -13.5rem 0;
+      }
+      &.four {
+        background-position: -20.5rem 0;
+      }
+      &.five {
+        background-position: -28.5rem 0;
+      }
+    }
+  }
+}

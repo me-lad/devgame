@@ -1,0 +1,3 @@
+@function multiplySize($fontSize) {
+  @return $fontSize * 2;
+}

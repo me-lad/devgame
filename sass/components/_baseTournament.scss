@@ -1,0 +1,112 @@
+//! Base-Tournament Styles -->
+
+.base-tournament {
+  &__container {
+    background-color: $color-primary;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__team {
+    @include displayFlex();
+    flex-direction: column;
+    gap: 1.5rem;
+    &-circle {
+      width: 8rem;
+      height: 8rem;
+      border-radius: 50%;
+      box-shadow: 0 0 1rem lighten($color-secondary, 20);
+      background: conic-gradient($color-red 25%, $color-tertiary 0);
+      @include displayFlex();
+      @include responsive(Ph) {
+        width: 7rem;
+        height: 7rem;
+      }
+      &.blue {
+        background: conic-gradient(
+          $color-red 25%,
+          darken($color-secondary, 25) 0
+        );
+        width: 11.5rem;
+        height: 11.5rem;
+        @include responsive(Ph) {
+          width: 10rem;
+          height: 10rem;
+        }
+      }
+      &.yellow {
+        background: conic-gradient($color-gold 25%, $color-secondary 0);
+      }
+    }
+    &-bg {
+      width: 95%;
+      height: 95%;
+      border-radius: 50%;
+      @include displayFlex();
+      background: radial-gradient(
+        circle,
+        darken($color-red, 8) 0,
+        $color-red 50%,
+        $color-secondary 100%
+      );
+      &.blue {
+        background: radial-gradient(
+          circle,
+          darken($color-secondary, 15) 0,
+          darken($color-secondary, 5) 50%,
+          $color-bg 100%
+        );
+      }
+      &.yellow {
+        background: radial-gradient(
+          $color-gold 0,
+          darken($color-gold, 15) 50%,
+          $color-bg 100%
+        );
+      }
+    }
+    &-flag {
+      width: 50%;
+      object-fit: cover;
+    }
+    &-name {
+      @include displayFlex();
+      flex-direction: column;
+      gap: 0.25rem;
+      & > span:nth-child(1) {
+        color: $color-white;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+      & > span:nth-child(2) {
+        color: $color-silver;
+        font-size: $text-sm-font;
+      }
+    }
+  }
+  &__progress {
+    width: 100%;
+    height: 1.25rem;
+    background-color: $color-bg;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    &-percentage {
+      width: 70%;
+      height: 100%;
+      border-radius: 2.5rem;
+      background: linear-gradient(90deg, $color-gold, $color-white);
+      font-size: $text-sm-font;
+      font-weight: bold;
+      @include displayFlex();
+    }
+  }
+}

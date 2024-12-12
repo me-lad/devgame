@@ -1,0 +1,186 @@
+//! Popular Styles -->
+
+.popular {
+  width: 100%;
+  margin: 2.5rem 0;
+  //! Popular Content Styles -->
+  &__content {
+    height: 100%;
+    width: $width-content;
+    margin: 0 auto;
+    @include responsive(Th) {
+      width: 97.5% !important;
+    }
+    @include responsive(Ps) {
+      width: 100% !important;
+    }
+    //! Popular Items Styles -->
+    &-items {
+      @include displayFlex();
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      @include responsive(Ts) {
+        flex-wrap: wrap;
+      }
+      @include responsive(P) {
+        max-height: 200px;
+        overflow: auto;
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 2rem;
+      }
+    }
+    //! Popular Item Styles -->
+    &-item {
+      width: 33%;
+      min-width: 29.5rem;
+      @include responsive(Ts) {
+        width: 31%;
+        min-width: 33.5rem;
+      }
+      @include responsive(P) {
+        width: 75%;
+      }
+      &-container {
+        background-color: $color-primary;
+        border-radius: 1rem;
+        padding: 0.75rem;
+        overflow: hidden;
+        @include displayFlex();
+        @include transition();
+        & > img {
+          width: 100%;
+          max-height: 19.35rem;
+          object-fit: cover;
+          border-radius: 1rem;
+          aspect-ratio: 17/10;
+          @include responsive(Laptop) {
+            max-height: 25.5rem;
+          }
+        }
+        &--border {
+          border: 0.25rem solid $color-secondary;
+          position: relative;
+        }
+        &:hover {
+          cursor: none;
+          transform: translateY(-1rem);
+          padding: 0;
+        }
+      }
+      &-container:hover &-cover {
+        width: 90%;
+        opacity: 0.7;
+      }
+      &-cover {
+        width: 45%;
+        height: 100%;
+        position: absolute;
+        right: 0;
+        background-color: $color-secondary;
+        clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+        @include transition(1s, ease-in, 0ms);
+        @include displayFlex(flex-end);
+        &:hover {
+          cursor: pointer;
+        }
+        & > div {
+          width: 96%;
+          height: 100%;
+          text-transform: uppercase;
+          background-color: darken($color-secondary, 10);
+          clip-path: polygon(30% 0, 100% 0, 100% 100%, 0 100%);
+          @include displayFlex();
+          font-size: 2rem;
+          color: $color-white;
+          font-weight: bold;
+        }
+      }
+      &-description {
+        @include displayFlex(space-between);
+        width: 100%;
+        margin-top: 2.5rem;
+      }
+      &-name {
+        width: 50%;
+        @include displayFlex($align: flex-start);
+        flex-direction: column;
+        gap: 1.5rem;
+        & > h3 {
+          font-size: 1.5rem;
+          color: $color-white;
+        }
+        & > p {
+          font-size: 1.2rem;
+          color: $color-white;
+          line-height: 1.5;
+          @include textBreakkit(2);
+        }
+      }
+      &-count {
+        @include displayFlex(flex-start);
+        gap: 0.8rem;
+        & > span {
+          color: $color-white;
+          font-size: 1rem;
+        }
+      }
+      &-circle {
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        background-color: $color-green;
+        @include displayFlex;
+        box-shadow: 0 0 0.5rem lighten($color-green, 45);
+        & > span {
+          width: 0.8rem;
+          height: 0.8rem;
+          border: 0.1rem solid $color-black;
+          border-radius: 50%;
+        }
+      }
+      &-matchup {
+        width: 50%;
+        @include displayFlex();
+        flex-direction: column;
+        gap: 1rem;
+        & > div:nth-child(1) {
+          @include displayFlex(flex-start);
+          gap: 0.6rem;
+          & > i {
+            width: 1.75rem;
+            height: 1.75rem;
+            background: url(../../public/images/team-icon1.webp) no-repeat;
+            background-size: contain;
+          }
+          & > span {
+            color: $color-white;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+        }
+        & > div:nth-child(2) {
+          font-size: 1.6rem;
+          color: $color-orange;
+        }
+        & > div:nth-child(3) {
+          @include displayFlex(flex-start);
+          gap: 0.6rem;
+          & > i {
+            width: 1.75rem;
+            height: 1.75rem;
+            background: url(../../public/images/team-icon2.webp) no-repeat 0
+              0.2rem;
+            background-size: contain;
+          }
+          & > span {
+            color: $color-white;
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

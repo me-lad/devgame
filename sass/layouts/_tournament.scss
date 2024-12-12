@@ -1,0 +1,157 @@
+//! Tournament Styles -->
+
+.tournament {
+  width: 100%;
+  margin-top: 5rem;
+  //! Tournament Content Styles -->
+  &__content {
+    width: $width-content;
+    margin: 0 auto;
+    @include responsive(Th) {
+      width: 97.5% !important;
+    }
+    @include responsive(Ps) {
+      width: 100% !important;
+    }
+    //! Tournament Content Items Styles -->
+    &-items {
+      @include displayFlex(space-between, normal);
+      margin-top: 2.5rem;
+    }
+    //! Tournament Content Left Styles -->
+    &-left {
+      width: 68%;
+    }
+    &-item {
+      width: 100%;
+      height: 50%;
+      justify-content: center;
+      position: relative;
+      @include responsive(Ps) {
+        padding: 1.25rem !important;
+      }
+      &--size {
+        height: 100%;
+        @include responsive(Ps) {
+          border-radius: 0 1rem 1rem 0 !important;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      &--padding {
+        padding: 1.7rem !important;
+        @include responsive(Ps) {
+          padding: 0.75rem !important;
+          border-radius: 1rem 0 0 1rem !important;
+        }
+      }
+    }
+    &-holder {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      border-radius: 1rem;
+    }
+    &-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+      overflow: hidden;
+      opacity: 0.75;
+      @include transition();
+    }
+    &-popup {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, $color-secondary, $color-tertiary);
+      opacity: 0.7;
+      position: absolute;
+      top: 100%;
+      @include displayFlex();
+      color: $color-white;
+      font-size: multiplySize($text-lg-font);
+      @include transition(1s);
+      @include responsive(Ps) {
+        font-size: 3.3rem;
+      }
+    }
+    &-item:hover &-popup {
+      top: 0;
+    }
+    &-item:hover &-image--scale {
+      scale: 1.05;
+    }
+    &-discount {
+      width: 30rem;
+      height: 5rem;
+      background-color: gold;
+      clip-path: polygon(20% 0, 80% 0, 100% 100%, 0px 100%);
+      position: absolute;
+      top: 1.8rem;
+      right: -7.5rem;
+      transform: rotate(30deg);
+      font-weight: 800;
+      @include displayFlex();
+      font-size: 1.4rem;
+      @include responsive(Ps) {
+        width: 20rem;
+        height: 2.5rem;
+        font-size: 1rem;
+        right: -4.5rem;
+      }
+    }
+    //! Tournament Content Right Styles -->
+    &-right {
+      width: 30%;
+      @include displayFlex($align: space-between);
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    &-name {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      position: absolute;
+      left: 3rem;
+      top: 3rem;
+      @include responsive(Ph) {
+        display: none;
+      }
+    }
+    &-text {
+      color: $color-white;
+      font-size: $text-sm-font;
+      font-weight: 800;
+    }
+    &-playBtn {
+      width: 4.6rem;
+      height: 4.6rem;
+      background-color: $color-secondary;
+      @include displayFlex();
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      box-shadow: 0 0 1rem lighten($color-secondary, 10);
+      border-radius: 50%;
+      @include transition();
+      @include responsive(Ph) {
+        width: 3.2rem;
+        height: 3.2rem;
+      }
+      &:hover {
+        cursor: pointer;
+        background-color: lighten($color-secondary, 5);
+      }
+    }
+    &-icon {
+      font-size: 1.4rem;
+      color: $color-white;
+    }
+  }
+}

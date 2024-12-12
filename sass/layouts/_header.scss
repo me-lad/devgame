@@ -1,0 +1,173 @@
+//! Heder Styles -->
+
+.header {
+  width: 100%;
+  height: 6rem;
+  padding: 1rem 0;
+  //! Heder Content Styles -->
+  &__content {
+    width: $width-content;
+    height: 100%;
+    margin: 0 auto;
+    @include displayFlex(flex-end);
+    gap: 1.5rem;
+    position: relative;
+    @include responsive(Laptop) {
+      justify-content: center;
+    }
+    @include responsive(P) {
+      justify-content: end;
+    }
+    //! Heder Search Styles -->
+    &-search {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      &-box {
+        background-color: $color-primary;
+        width: 40rem;
+        height: 100%;
+        border: none;
+        border-radius: 2.5rem;
+        color: $color-white;
+        padding: 0 1.5rem;
+        font-size: 1.4rem;
+        @include responsive(Laptop) {
+          width: 47.5rem;
+        }
+        @include responsive(Ph) {
+          width: 37.5rem;
+        }
+        @include responsive(Ps) {
+          width: 31.5rem;
+        }
+        @include responsive(P) {
+          width: 26.25rem;
+        }
+        &:focus {
+          border: 0.2rem solid $color-secondary;
+          outline: none;
+        }
+      }
+      &-icon {
+        background-color: $color-secondary;
+        width: 4rem;
+        height: 95%;
+        border-radius: 50%;
+        position: absolute;
+        right: 0;
+        color: $color-white;
+        @include displayFlex();
+        @include transition();
+        font-size: 1.4rem;
+        &:hover {
+          cursor: pointer;
+          font-size: 1.6rem;
+        }
+      }
+    }
+    //! Heder Info Styles -->
+    &-info {
+      @include displayFlex();
+      gap: 1.5rem;
+      &-icon {
+        color: $color-white;
+        font-size: 2.2rem;
+        position: relative;
+        @include transition(450ms, ease-in, 5ms);
+        &:hover {
+          cursor: pointer;
+        }
+        & > div {
+          font-size: $text-sm-font;
+          position: absolute;
+          background-color: $color-secondary;
+          width: 1.8rem;
+          height: 1.8rem;
+          border-radius: 50%;
+          @include displayFlex;
+          top: -1rem;
+          right: -1rem;
+        }
+      }
+      &-icon:hover &-notifications {
+        visibility: visible;
+        transform: translateY(0.2rem);
+        -webkit-transform: translateY(0.2rem);
+        -moz-transform: translateY(0.2rem);
+        -ms-transform: translateY(0.2rem);
+      }
+      &-notifications {
+        width: 18rem;
+        height: 10rem;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        z-index: 2;
+        top: 5.5rem;
+        right: -1.5rem;
+        background-color: #111a23;
+        border-radius: 0.8rem;
+        visibility: hidden;
+        @include transition(450ms, ease-in, 5ms);
+        transform: translateY(-0.1rem);
+        -webkit-transform: translateY(-0.1rem);
+        -moz-transform: translateY(-0.1rem);
+        -ms-transform: translateY(-0.1rem);
+        &::before {
+          content: "";
+          width: 2rem;
+          height: 2rem;
+          background-color: #111a23;
+          position: absolute;
+          z-index: -1;
+          top: -0.2rem;
+          right: 1.6rem;
+          transform: rotate(45deg);
+        }
+      }
+      &-notification {
+        width: 100%;
+        height: 50%;
+        color: $color-white;
+        font-size: $text-default-font;
+        @include displayFlex();
+        @include transition();
+        &:hover {
+          background-color: $color-secondary;
+          cursor: pointer;
+          border-radius: 0.8rem;
+        }
+      }
+      &-user {
+        @include displayFlex();
+        gap: 1rem;
+        & > span {
+          font-size: 1.2rem;
+          color: $color-white;
+          font-weight: 600;
+        }
+        & > i {
+          width: 4rem;
+          height: 4rem;
+          background: url(../../public/images/pic-user.png) no-repeat;
+          background-size: cover;
+          border: 0.1rem solid lighten($color-secondary, 10);
+          border-radius: 50%;
+        }
+      }
+    }
+    &-justify {
+      position: absolute;
+      left: 0;
+      font-size: $text-default-font;
+      color: $color-white;
+      cursor: pointer;
+      display: none;
+      @include responsive(Laptop) {
+        display: block;
+      }
+    }
+  }
+}

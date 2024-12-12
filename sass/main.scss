@@ -1,0 +1,35 @@
+//! Utilities Dir -->
+
+@import "utilities/variables.scss";
+@import "utilities/mixins";
+@import "utilities/functions";
+
+//! Base Dir -->
+
+@import "base/reset";
+@import "base/typography";
+@import "base/default";
+
+//! Vendors Dir -->
+
+//! Themes Dir -->
+
+//! Layouts Dir -->
+
+@import "layouts/sidebar";
+@import "layouts/header";
+@import "layouts/slider";
+@import "layouts/popular";
+@import "layouts/streams";
+@import "layouts/recent";
+@import "layouts/tournament";
+@import "layouts/footer";
+
+//! Components Dir -->
+
+@import "components/baseTitle";
+@import "components/baseTournament";
+
+//! Pages Dir -->
+
+@import "pages/home";
