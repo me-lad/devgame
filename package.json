@@ -8,7 +8,7 @@
     "compile:sass": "node-sass sass/main.scss public/css/style.compile.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 version' public/css/style.compile.css -o public/css/style.prefix.css",
     "compress:css": "node-sass public/css/style.prefix.css public/css/style.min.css --output-style compressed",
-    "build:css": "npm-run-all SassCompiler CssPrefix CssCompress"
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
   },
   "keywords": [],
   "author": "",
