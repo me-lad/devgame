@@ -7,6 +7,8 @@
   background-color: $color-primary;
   position: sticky;
   top: 0;
+  max-height: 100dvh;
+  overflow-y: auto;
   @include responsive(Laptop) {
     display: none;
   }
@@ -184,7 +186,7 @@
     }
   }
   &__close {
-    font-size: $text-default-font;
+    font-size: 25px;
     color: $color-red;
     position: absolute;
     right: 2.5rem;
